@@ -1,0 +1,619 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: black;
+    height: 100vh;
+    gap: 0;
+    padding-top: 80px;
+}
+
+.header {
+    display: flex;
+    flex-direction: row;   
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    background-color: #000;
+    color: #fff;
+    padding: 0 20px; 
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 50;
+    height: 100px;
+    transition: background-color 0.5s, color 0.5s;
+}
+.header.scrolled {
+    background-color: #fefefd; 
+    color: #E31919;          
+}
+
+
+.header.scrolled .logo p,
+.header.scrolled .dropdown a {
+    color: #E31919 !important;
+    transition: color 0.5s;
+}
+
+.logo{
+    margin: 0px;
+   
+}
+
+.logo P{
+    font-family: 'Bebas Neue';
+    color: #fefefd;
+    font-size: 32px;
+    margin: 0;
+    font-weight: bold;
+    line-height: 1;
+     animation: fadeSlide 1.5s ease-in-out forwards;
+}
+
+@keyframes fadeSlide {
+  0% {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+nav {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.navbar {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+    display: flex;       
+    gap: 20px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    
+}
+
+.dropdown {
+    position: relative;
+    padding-left: 12px;
+}
+
+.dropdown a {
+    text-decoration: none;
+    color: white;
+    padding: 10px 15px;
+    display: block; 
+    text-shadow: #fefefd;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bolder;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: #222;
+    min-width: 150px;
+    flex-direction: column; 
+    padding: 10px 0;
+    z-index: 1001;
+}
+
+.dropdown-content li {
+    padding: 8px 15px;
+}
+
+.dropdown-content li a {
+    text-decoration: none;
+    color: white;
+    display: block;
+}
+
+.navbar .dropdown-content li a {
+    transition: background 0.5s, color 0.5s;
+    color: inherit; 
+    background: #222; 
+}
+
+
+.header.scrolled .dropdown-content {
+    background: #fff;
+}
+
+.header.scrolled .dropdown-content  a {
+    color: #E31919;
+}
+
+.header.scrolled .dropdown-content  a:hover {
+    background: #f0f0f0;
+    color: #E31919;
+}
+.dropdown:hover .dropdown-content {
+    display: block;  
+}
+
+.dropdown-content  a:hover {
+    background: #444;
+}
+.hero {
+    height: 100vh;  
+    background-image: url("ASSETS/IMAGES/done.jpg"); 
+    background-size: cover;   
+    background-position: center; 
+    background-repeat: no-repeat; 
+    display: flex;  
+    align-items: center;  
+    justify-content: center;  
+    position: relative;
+    color: white;  
+    margin-top: 0px;
+    padding-top: 20px;
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.5); 
+    z-index: 1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;  
+    text-align: center;
+    font-family: 'Bebas Neue';
+    font-size: xx-large;
+    padding: 50px;
+    padding-top: 50px;
+    margin-top: 50px;
+     animation: fadeSlide 1.5s ease-in-out forwards;
+}
+.para{
+    font-family: 'Bebas Neue';
+    color: #fefefd;
+    text-align: center;
+    font-size: x-large;
+}
+.parag{
+    font-family: 'Bebas Neue';
+    color: #fefefd;
+    text-align: center;
+    font-size: x-large;
+    display: flex;
+    flex-direction: row;
+    padding-left: 40px;
+}
+.one, .two, .three{
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
+}
+
+.parag img{
+    width: 450px;
+    border-radius: 8px;
+}
+.paragr{
+    font-family: 'Bebas Neue';
+    color: #fefefd;
+    text-align: center;
+    font-size: x-large;
+    display: flex;
+    flex-direction: row;
+    padding-left: 40px;
+}
+.paragr img{
+    width: 450px;
+    border-radius: 8px;
+}
+.four, .five, .six{
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
+}
+
+.one, .two, .three, .four, .five, .six {
+gap: 25px;
+}
+
+.booking {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 50px 20px;
+    background-color: #fff; 
+    font-family:'Montserrat', sans-serif;
+    background-image: url("ASSETS/IMAGES/SPIDEY’S\ INTERLUDE\ \(13\).png");
+    min-height: 100vh;
+    
+}
+
+
+.booking form {
+    padding: 40px;
+    border-radius: 15px;
+    max-width: 600px;
+    width: 100%;
+    color: #E31919; 
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    box-shadow: whitesmoke;
+    
+}
+
+
+.booking label {
+    font-weight: bold;
+    color: #E31919;
+    text-shadow: whitesmoke;
+}
+
+.booking input,
+.booking select,
+.booking textarea {
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 10px;
+    font-size: 16px;
+    color: #E31919;
+    outline: none;
+    width: 100%;
+    box-sizing: border-box;
+    border: 1px solid white;
+   
+}
+
+
+.booking input:focus,
+.booking select:focus,
+.booking textarea:focus {
+    background-color: #b21515;
+    color: #fff;
+      
+    
+}
+
+
+.booking button {
+    background-color: #E31919;
+    color: #fff;
+    padding: 12px;
+    font-size: 18px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.booking button:hover {
+    background-color: #b21515;
+ 
+}
+
+
+.booking .book h1 {
+    text-align: center;
+    color: #E31919;
+    margin-bottom: 20px;
+    font-size: 60px;
+}
+.book{
+    font-family: 'Bebas Neue';
+}
+.final{
+    font-size: x-large;
+    font-family: 'Montserrat', sans-serif;
+    color: #fefefd;
+    text-align: center;
+    height: 35vh;
+}
+.foot{
+text-align: center;
+}
+.foot h1{
+    font-size: x-large;
+    font-family: 'Montserrat', sans-serif;
+    color: #333333;
+    text-align: center;
+    font-weight: bold;
+}
+.contact-link{
+    list-style-type: none;
+ }
+ .contact-link a{
+    font-family: 'Montserrat', sans-serif;
+    color: #b21515;
+    gap: 20px;
+ }
+.success{
+    color: green;
+    font-weight: bold;
+    margin-top: 10px;
+    text-align: center;
+    font-size: large;
+}
+form {
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  margin: 0 auto;
+}
+
+label, input, select, textarea, button {
+  margin: 10px 0;
+}
+
+.success-message {
+  margin-top: 20px;
+  font-weight: bold;
+}
+.spa-menu {
+ padding: 45px;
+  margin: 50px auto;
+  font-family: 'Montserrat', sans-serif;
+  color: #222;
+display: flex;
+flex-direction: column;
+  height: 270vh;
+}
+
+.spa-menu h1 {
+  text-align: center;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 45px;
+  margin-bottom: 30px;
+  color: #fefefd;
+}
+.spa-menu h2 {
+    font-family: 'Montserrat', sans-serif;
+    text-align: left;
+    color: #fefefd;
+    padding-bottom: 20px;
+    padding-top: 12px;
+}
+
+.menu-list {
+  list-style: none;
+  padding: 0;
+}
+.discount{
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    font-family:  'Montserrat', sans-serif;
+    color: #b22222;
+    font-weight: bold;
+    padding-top: 10px;
+    gap: 8px;
+    padding-bottom: 10px;
+}
+
+.menu-list li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 18px;
+  margin-bottom: 15px;
+  font-weight: bold;
+  color: #b22222;
+  line-height: 1.5;
+}
+
+.service {
+  flex: 0 0 auto;
+margin-right: 10px;
+     color: #b22222;
+}
+
+.dots {
+  flex-grow: 1;
+  border-bottom: 1px dotted #fefefd;
+  margin: 0 10px;
+height: 0;
+transform: translateY(2px);
+
+}
+
+.price {
+  white-space: nowrap;
+    flex: 0 0 auto;
+}
+
+.LaserSkin-menu {
+ padding: 45px;
+  margin: 50px auto;
+  font-family: 'Montserrat', sans-serif;
+  color: #222;
+display: flex;
+flex-direction: column;
+  height: 150vh;
+}
+
+.LaserSkin-menu h1 {
+  text-align: center;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 45px;
+  margin-bottom: 30px;
+  color: #fefefd;
+}
+.LaserSkin-menu h2 {
+    font-family: 'Montserrat', sans-serif;
+    text-align: left;
+    color: #fefefd;
+    padding-bottom: 20px;
+    padding-top: 12px;
+}
+
+.shoe{
+    color: #fefefd;
+    text-align: left;
+    padding-bottom: 30px;
+    padding-top: 10px;
+    gap: 8px;
+    font-size: medium;
+    font-weight: bold;
+}
+
+.Nail-menu {
+ padding: 45px;
+  margin: 50px auto;
+  font-family: 'Montserrat', sans-serif;
+  color: #222;
+display: flex;
+flex-direction: column;
+  height: 120vh;
+}
+
+.Nail-menu h1 {
+  text-align: center;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 45px;
+  margin-bottom: 30px;
+  color: #fefefd;
+}
+.Nail-menu h2 {
+    font-family: 'Montserrat', sans-serif;
+    text-align: left;
+    color: #fefefd;
+    padding-bottom: 20px;
+    padding-top: 12px;
+}
+.out{
+    text-align: center;
+    font-size: medium;
+    color: #E31919;
+}
+
+.rate{
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    font-family:  'Montserrat', sans-serif;
+    color: #b22222;
+    font-weight: bold;
+    padding-top: 10px;
+    gap: 8px;
+    padding-bottom: 10px;
+}
+.rate h2{
+text-align: center;
+font-size: xx-large;
+}
+.nails img{
+    width: 400px;
+    
+}
+.NailDesign-Gallery h1{
+    font-size: 60px;
+    font-family: 'Bebas Neue';
+    font-weight: bolder;
+    color: #fefefd;
+    text-align: center;
+}
+.how{
+    display: flex;
+    flex-direction: row;
+   margin: auto;
+    padding: 10px;
+    gap: 20px;
+}
+.nails{
+    display: flex;
+    flex-direction: column;
+}
+
+.hair-gallery h1{
+    font-family: 'Bebas Neue';
+    color: green;
+    text-align: center;
+    font-size: 60px;
+}
+
+.Himag{
+    font-family: 'Bebas Neue';
+    color: #fefefd;
+    text-align: center;
+    font-size: x-large;
+    display: flex;
+    flex-direction: row;
+    padding-left: 40px;
+}
+
+
+.Himag img{
+    width: 450px;
+    border-radius: 8px;
+}
+.Himage{
+    font-family: 'Bebas Neue';
+    color: #fefefd;
+    text-align: center;
+    font-size: x-large;
+    display: flex;
+    flex-direction: row;
+    padding-left: 40px;
+}
+.Himage img{
+    width: 450px;
+    border-radius: 8px;
+}
+ 
+#spa-menu,
+#massage,
+#body-scrub,
+#facial,
+#lashes,
+#laser-hair,
+#facilities,   
+#laser-skin,
+#laser-facial,
+#hydrafacial,
+#chemical,
+#pulse,
+#nail-menu,
+#nail-design,
+#hair-menu,
+#boo,
+#hair-gallery{
+    scroll-margin-top: 100px;
+}
+
+.on{
+display: flex;
+justify-content: center;
+}
+.boo-now{
+    font-size: large;
+    font-weight: 40px;
+    font-family: 'Montserrat', sans-serif;
+    color: gold;
+    text-decoration: none;
+    display: inline;
+    border-radius: 12px;
+    background-color:#b21515;
+    padding: 15px 40px;
+    transition: all 0.3s;
+}
+.boo-now:hover {
+  transform: scale(1.1);             
+}
+
+
+
+            
+
